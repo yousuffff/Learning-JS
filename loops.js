@@ -259,3 +259,35 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+// const str = 'hey_yousuf';
+// console.log((str.indexOf('_')));
+// const str = ' hello hello hello yousuf';
+// console.log(str.replaceAll('hello', 'hey'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+  const correctForm = []
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    // console.log(lowerCase);
+    // console.log(first, second);
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+
+    // correctForm.push(lowerCase[0] + lowerCase[1].slice(0,1).toUpperCase() + lowerCase[1].slice(1));
+    // console.log(`${correctForm.padEnd(20)}`);
+
+    // document.createElement('p').appendChild(document.querySelector('body'));
+    // correctForm('p')
+  }
+})
+
+
+
+// correctStr('underscore_name');
+// correctStr(' first_name');
+// correctStr('Some_Variable');
+// correctStr('  calculate_AGE');
+// correctStr('delayed_departure');
